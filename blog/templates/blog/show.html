@@ -1,0 +1,18 @@
+<h1>{{ blog.blog_title }}</h1>
+<p>
+	{{ blog.blog_content}}
+</p>
+<form action = '/blogs/{{blog.id}}/new_comment' method = "post">{% csrf_token %}
+			<div>New Comment:<br><textarea type = "text" name ='comment_content'></textarea></div>
+			<input type = "submit" value = "Submit">
+</form>
+<h3>Comments</h3>
+{% if comment_list %}
+    {% for comment in comment_list %}
+        <p>{{comment}}</p>
+        
+    {% endfor %}
+ 
+{% else %}
+    <p>No Comments</p>
+{% endif %}

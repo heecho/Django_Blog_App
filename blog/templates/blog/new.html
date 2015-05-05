@@ -1,0 +1,9 @@
+<html>
+	<body>
+		<form action = "/blogs/create" method = "post">{% csrf_token %}
+			<div>Name:<br><input type = "text" name ='blog_title'></div>
+			<div>Blog Text:<br><textarea type = "text" name ='blog_content'></textarea></div>
+			<input type = "submit" value = "Submit">
+		</form>
+	</body>
+</html>

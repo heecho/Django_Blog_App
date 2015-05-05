@@ -1,0 +1,10 @@
+<h1>Blog Index</h1>
+{% if blog_list %}
+    <ul>
+    {% for blog in blog_list %}
+        <li><a href="{% url "show" blog.id %}">{{ blog.blog_title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No blogs are available.</p>
+{% endif %}
